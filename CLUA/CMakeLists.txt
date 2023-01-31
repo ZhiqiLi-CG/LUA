@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.2)
 message("This CMakeList.txt is written for 64bit system only")
 
 project (CLUAExamples LANGUAGES CXX)
-set(ResearchV_ROOT_DIR ${CMAKE_SOURCE_DIR})
+set(CLUA_ROOT_DIR ${CMAKE_SOURCE_DIR})
 
 
 if(${MSVC}) 
@@ -36,19 +36,19 @@ endif()
 ###############################################
 # Config data path
 ###############################################
-set(VISUALIZATION_DATA_PATH "${CMAKE_SOURCE_DIR}/data")
+set(CLUA_DATA_PATH "${CMAKE_SOURCE_DIR}/data")
 configure_file(
-	"${CMAKE_SOURCE_DIR}/examples/visualization_data_path.h.in" 
-	"${PROJECT_BINARY_DIR}/visualization_data_path.h"
+	"${CMAKE_SOURCE_DIR}/examples/clua_data_path.h.in" 
+	"${PROJECT_BINARY_DIR}/clua_data_path.h"
 	@ONLY)
-message(STATUS "${PROJECT_BINARY_DIR}/visualization_data_path.h created,\n DATA_PATH=${VISUALIZATION_DATA_PATH}")
+message(STATUS "${PROJECT_BINARY_DIR}/clua_data_path.h created,\n DATA_PATH=${CLUA_DATA_PATH}")
 
 ###############################################
 # Options and config
 ###############################################
-include(ResearchV/ResearchV.cmake)
-include_directories(${ResearchV_INCLUDE_DIRS})
-Set_ResearchV_Env()
+include(clua/CLUA.cmake)
+include_directories(${CLUA_INCLUDE_DIRS})
+Set_CLUA_Env()
 
 ###############################################
 # Example Projects

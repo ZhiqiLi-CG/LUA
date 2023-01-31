@@ -1,0 +1,6 @@
+﻿#ifndef CLUA_DATA_PATH_H
+#define CLUA_DATA_PATH_H
+
+const char* clua_data_path = "@CLUA_DATA_PATH@";
+
+#endif
